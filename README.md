@@ -1,16 +1,8 @@
-# OOP Ex2 Tests
-featured in Exercise 2 of the new "Introduction to OOP" course,
+# OOP Ex3 Tests
+featured in Exercise 3 of the new "Introduction to OOP" course,
 HUJI, Winter 2021-2022 Semester. \
 Written by Erel Debel.
 
-<B>Insturctions at the bottom ↓</B>
-
-<B>Important info about CleverPlayerTest and SnartypamtsPlayerTest:</B>
-	
-Pay attention to the documentation. without any change these classes solely test using the current Board.SIZE and Board.WIN_STREAK values. As documented in these classes it is recommended you <B>temporarily</B> remove the _final_ modifiers from these constant and uncomment the test methods in these classes for a full test of the wanted Win/Lose ratio.
-	
-The test support the printing in _Tournament.playTournament_ as defined in the forum: "=== player 1: %d | player 2: %d | Draws: %d ===\r"
- 
 ========================================================================================
 
 <B>The tests can be configured and run by:</B>
