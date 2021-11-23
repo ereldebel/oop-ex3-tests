@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * HUJI, Winter 2021-2022 Semester.
  *
  * @author Erel Debel.
- *
- * Special thanks for Rani and Roi with their edge cases tips.
+ * <p>
+ * Special thanks to Roi for his alotStudyTime cases and to Rani for his minLeap tips.
  */
 class SolutionsTest {
 
@@ -21,8 +21,18 @@ class SolutionsTest {
 	 */
 	@Test
 	public void alotStudyTimeTest() {
+		assertEquals(3, Solutions.alotStudyTime(new int[]{1,1,1,1,1}, new int[]{1,1,1}));
+		assertEquals(3, Solutions.alotStudyTime(new int[]{1,1,1}, new int[]{1,1,1,1,1}));
+		assertEquals(0, Solutions.alotStudyTime(new int[]{2, 3, 1}, new int[]{}));
+		assertEquals(0, Solutions.alotStudyTime(new int[]{}, new int[]{1, 3, 2}));
 		assertEquals(3, Solutions.alotStudyTime(new int[]{2, 3, 1}, new int[]{1, 3, 2}));
-		assertEquals(1, Solutions.alotStudyTime(new int[]{2, 3, 2}, new int[]{1, 7, 1}));
+
+		assertEquals(1, Solutions.alotStudyTime(new int[]{2, 3, 2}, new int[]{1, 7, 1}),
+				"One could use 7, the other two will be left out");
+		assertEquals(4, Solutions.alotStudyTime(new int[]{1,7,13,9,2,5,15}, new int[]{2,2,4,6,6,10}),
+				"Example: 9->10, 5->6, 2->2, 1->2");
+		assertEquals(5, Solutions.alotStudyTime(new int[]{2,5,3,4,9,13,9}, new int[]{1,7,3,2,1,1,10,15}),
+				"Example: 13->15, 9->10, 5->7, 3->3, 2->2");
 	}
 
 	/**
@@ -53,12 +63,26 @@ class SolutionsTest {
 	public void bucketWalkTest() {
 		assertEquals(1, Solutions.bucketWalk(0));
 		assertEquals(1, Solutions.bucketWalk(1));
-		assertEquals(3, Solutions.bucketWalk(2));
-		assertEquals(21, Solutions.bucketWalk(5));
-		assertEquals(85, Solutions.bucketWalk(7));
-		assertEquals(699051, Solutions.bucketWalk(20));
-		assertEquals(1431655765, Solutions.bucketWalk(35));
-		assertEquals(1431655765, Solutions.bucketWalk(47));
+		assertEquals(2, Solutions.bucketWalk(2));
+		assertEquals(13, Solutions.bucketWalk(6));
+		assertEquals(987, Solutions.bucketWalk(15));
+		assertEquals(514229, Solutions.bucketWalk(28));
+		assertEquals(14930352, Solutions.bucketWalk(35));
+		assertEquals(1836311903, Solutions.bucketWalk(45));
+	}
+
+	/**
+	 * Tests for the numTrees algorithm.
+	 */
+	@Test
+	public void numTreesTest(){
+		assertEquals(1, Solutions.numTrees(1));
+		assertEquals(2, Solutions.numTrees(2));
+		assertEquals(5, Solutions.numTrees(3));
+		assertEquals(429, Solutions.numTrees(7));
+		assertEquals(16796, Solutions.numTrees(10));
+		assertEquals(9694845, Solutions.numTrees(15));
+		assertEquals(1767263190, Solutions.numTrees(19));
 	}
 
 }
