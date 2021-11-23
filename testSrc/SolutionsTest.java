@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolutionsTest {
 
 	/**
-	 *
+	 * Tests for the alotStudyTime algorithm.
 	 */
 	@Test
 	public void alotStudyTimeTest() {
@@ -25,6 +25,9 @@ class SolutionsTest {
 		assertEquals(1, Solutions.alotStudyTime(new int[]{2, 3, 2}, new int[]{1, 7, 1}));
 	}
 
+	/**
+	 * Tests for the minLeap algorithm.
+	 */
 	@Test
 	public void minLeapTest() {
 		assertEquals(0, Solutions.minLeap(new int[]{3}), "No leaps needed as n-1.");
@@ -41,6 +44,21 @@ class SolutionsTest {
 		depthArray[89466461] = 1254;
 		assertEquals(depthArray.length - depthArray[124215] - depthArray[89466461] + 1,
 				Solutions.minLeap(depthArray));
+	}
+
+	/**
+	 * Tests for the bucketWalk algorithm.
+	 */
+	@Test
+	public void bucketWalkTest() {
+		assertEquals(1, Solutions.bucketWalk(0));
+		assertEquals(1, Solutions.bucketWalk(1));
+		assertEquals(3, Solutions.bucketWalk(2));
+		assertEquals(21, Solutions.bucketWalk(5));
+		assertEquals(85, Solutions.bucketWalk(7));
+		assertEquals(699051, Solutions.bucketWalk(20));
+		assertEquals(1431655765, Solutions.bucketWalk(35));
+		assertEquals(1431655765, Solutions.bucketWalk(47));
 	}
 
 }
